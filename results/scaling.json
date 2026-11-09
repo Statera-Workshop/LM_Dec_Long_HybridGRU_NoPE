@@ -1,0 +1,83 @@
+{
+ "model": "hyb_gru_nope",
+ "repo": "(new) hybrid: GRU layer + x-transformers decoder",
+ "target_repo": "LM_Dec_Long_HybridGRU_NoPE",
+ "category": "Long",
+ "upstream": "lucidrains/x-transformers (MIT), pip 2.31.7 + torch.nn.GRU",
+ "unified": [
+  "1 GRU layer (dim 512) added residually before a 6-layer nope decoder (same decoder as xt_nope)"
+ ],
+ "torch": "2.5.1+cu124",
+ "gpu": "NVIDIA GeForce RTX 3070 Ti",
+ "stage": "scaling",
+ "started": "2026-11-03 17:40:20",
+ "smoke": false,
+ "rows": [
+  {
+   "len": 512,
+   "train": {
+    "peak_mb": 139.7,
+    "ms": 36.9,
+    "dtype": "bf16"
+   },
+   "infer": {
+    "peak_mb": 56.5,
+    "ms": 13.0,
+    "dtype": "bf16"
+   }
+  },
+  {
+   "len": 1024,
+   "train": {
+    "peak_mb": 212.3,
+    "ms": 48.5,
+    "dtype": "bf16"
+   },
+   "infer": {
+    "peak_mb": 76.0,
+    "ms": 19.0,
+    "dtype": "bf16"
+   }
+  },
+  {
+   "len": 2048,
+   "train": {
+    "peak_mb": 380.0,
+    "ms": 91.4,
+    "dtype": "bf16"
+   },
+   "infer": {
+    "peak_mb": 118.0,
+    "ms": 31.4,
+    "dtype": "bf16"
+   }
+  },
+  {
+   "len": 4096,
+   "train": {
+    "peak_mb": 707.6,
+    "ms": 132.9,
+    "dtype": "bf16"
+   },
+   "infer": {
+    "peak_mb": 202.0,
+    "ms": 61.3,
+    "dtype": "bf16"
+   }
+  },
+  {
+   "len": 8192,
+   "train": {
+    "peak_mb": 1374.7,
+    "ms": 300.7,
+    "dtype": "bf16"
+   },
+   "infer": {
+    "peak_mb": 370.0,
+    "ms": 124.7,
+    "dtype": "bf16"
+   }
+  }
+ ],
+ "seconds": 5.5
+}

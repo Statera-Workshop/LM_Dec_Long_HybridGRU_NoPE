@@ -1,0 +1,196 @@
+{
+ "model": "hyb_gru_nope",
+ "repo": "(new) hybrid: GRU layer + x-transformers decoder",
+ "target_repo": "LM_Dec_Long_HybridGRU_NoPE",
+ "category": "Long",
+ "upstream": "lucidrains/x-transformers (MIT), pip 2.31.7 + torch.nn.GRU",
+ "unified": [
+  "1 GRU layer (dim 512) added residually before a 6-layer nope decoder (same decoder as xt_nope)"
+ ],
+ "torch": "2.5.1+cu124",
+ "gpu": "NVIDIA GeForce RTX 3070 Ti",
+ "stage": "lm05v3s5",
+ "started": "2026-11-05 11:38:31",
+ "smoke": false,
+ "levels": {
+  "4": {
+   "queries": 1,
+   "distinct": true,
+   "steps": 6000,
+   "capped": false,
+   "diverged": false,
+   "bf16": true,
+   "final_loss": 5.779691127827391e-05,
+   "minutes": 11.6,
+   "history": [
+    {
+     "step": 500,
+     "loss": 2.8172314167022705,
+     "acc": 0.359375
+    },
+    {
+     "step": 1000,
+     "loss": 1.8205076456069946,
+     "acc": 0.234375
+    },
+    {
+     "step": 1500,
+     "loss": 1.6589407920837402,
+     "acc": 0.25
+    },
+    {
+     "step": 2000,
+     "loss": 0.9955137968063354,
+     "acc": 0.609375
+    },
+    {
+     "step": 2500,
+     "loss": 0.003308110171929002,
+     "acc": 1.0
+    },
+    {
+     "step": 3000,
+     "loss": 0.0016934938030317426,
+     "acc": 1.0
+    },
+    {
+     "step": 3500,
+     "loss": 0.0019911006093025208,
+     "acc": 1.0
+    },
+    {
+     "step": 4000,
+     "loss": 5.512259667739272e-05,
+     "acc": 1.0
+    },
+    {
+     "step": 4500,
+     "loss": 4.4255539251025766e-05,
+     "acc": 1.0
+    },
+    {
+     "step": 5000,
+     "loss": 0.0006118669407442212,
+     "acc": 0.984375
+    },
+    {
+     "step": 5500,
+     "loss": 0.12595094740390778,
+     "acc": 1.0
+    },
+    {
+     "step": 6000,
+     "loss": 5.779691127827391e-05,
+     "acc": 1.0
+    }
+   ],
+   "test": {
+    "512": {
+     "normal": 1.0,
+     "keys": 0.166015625,
+     "values": 0.017578125,
+     "true_recall": 0.833984375
+    },
+    "2048": {
+     "normal": 0.998046875,
+     "keys": 0.107421875,
+     "values": 0.017578125,
+     "true_recall": 0.890625
+    }
+   },
+   "value_set_baseline": 0.25,
+   "chance": 0.015625,
+   "micro_batch": null
+  },
+  "16": {
+   "queries": 4,
+   "distinct": true,
+   "steps": 6000,
+   "capped": false,
+   "diverged": false,
+   "bf16": true,
+   "final_loss": 2.6041663659270853e-05,
+   "minutes": 11.6,
+   "history": [
+    {
+     "step": 500,
+     "loss": 3.960014820098877,
+     "acc": 0.0859375
+    },
+    {
+     "step": 1000,
+     "loss": 3.3306756019592285,
+     "acc": 0.05078125
+    },
+    {
+     "step": 1500,
+     "loss": 3.0283608436584473,
+     "acc": 0.0625
+    },
+    {
+     "step": 2000,
+     "loss": 2.4243838787078857,
+     "acc": 0.31640625
+    },
+    {
+     "step": 2500,
+     "loss": 0.0015568217495456338,
+     "acc": 0.99609375
+    },
+    {
+     "step": 3000,
+     "loss": 0.00027533742832019925,
+     "acc": 0.9921875
+    },
+    {
+     "step": 3500,
+     "loss": 0.00018708511197473854,
+     "acc": 1.0
+    },
+    {
+     "step": 4000,
+     "loss": 0.0001537712523713708,
+     "acc": 1.0
+    },
+    {
+     "step": 4500,
+     "loss": 0.00010164524428546429,
+     "acc": 1.0
+    },
+    {
+     "step": 5000,
+     "loss": 0.005876439157873392,
+     "acc": 0.99609375
+    },
+    {
+     "step": 5500,
+     "loss": 1.6492973372805864e-05,
+     "acc": 1.0
+    },
+    {
+     "step": 6000,
+     "loss": 2.6041663659270853e-05,
+     "acc": 1.0
+    }
+   ],
+   "test": {
+    "512": {
+     "normal": 1.0,
+     "keys": 0.03466796875,
+     "values": 0.0166015625,
+     "true_recall": 0.96533203125
+    },
+    "2048": {
+     "normal": 0.9990234375,
+     "keys": 0.02978515625,
+     "values": 0.0146484375,
+     "true_recall": 0.96923828125
+    }
+   },
+   "value_set_baseline": 0.0625,
+   "chance": 0.015625,
+   "micro_batch": null
+  }
+ },
+ "seconds": 1395.3
+}
