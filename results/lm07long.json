@@ -1,0 +1,141 @@
+{
+ "model": "hyb_gru_nope",
+ "repo": "(new) hybrid: GRU layer + x-transformers decoder",
+ "target_repo": "LM_Dec_Long_HybridGRU_NoPE",
+ "category": "Long",
+ "upstream": "lucidrains/x-transformers (MIT), pip 2.31.7 + torch.nn.GRU",
+ "unified": [
+  "1 GRU layer (dim 512) added residually before a 6-layer nope decoder (same decoder as xt_nope)"
+ ],
+ "torch": "2.5.1+cu124",
+ "gpu": "NVIDIA GeForce RTX 3070 Ti",
+ "stage": "lm07long",
+ "started": "2026-11-10 20:02:59",
+ "smoke": false,
+ "steps": 30000,
+ "capped": false,
+ "diverged": false,
+ "final_loss": 0.18734905123710632,
+ "history": [
+  {
+   "step": 2500,
+   "loss": 1.4749032258987427,
+   "acc": 0.515625,
+   "shortcut_copy_last_set": 0.3203125,
+   "chance": 0.0625
+  },
+  {
+   "step": 5000,
+   "loss": 0.5411506295204163,
+   "acc": 0.7265625,
+   "shortcut_copy_last_set": 0.3203125,
+   "chance": 0.0625
+  },
+  {
+   "step": 7500,
+   "loss": 0.41053882241249084,
+   "acc": 0.8671875,
+   "shortcut_copy_last_set": 0.3203125,
+   "chance": 0.0625
+  },
+  {
+   "step": 10000,
+   "loss": 0.1901729255914688,
+   "acc": 0.9140625,
+   "shortcut_copy_last_set": 0.3203125,
+   "chance": 0.0625
+  },
+  {
+   "step": 12500,
+   "loss": 0.1311272531747818,
+   "acc": 0.9140625,
+   "shortcut_copy_last_set": 0.3203125,
+   "chance": 0.0625
+  },
+  {
+   "step": 15000,
+   "loss": 0.20019648969173431,
+   "acc": 0.84375,
+   "shortcut_copy_last_set": 0.3203125,
+   "chance": 0.0625
+  },
+  {
+   "step": 17500,
+   "loss": 0.1477510780096054,
+   "acc": 0.90625,
+   "shortcut_copy_last_set": 0.3203125,
+   "chance": 0.0625
+  },
+  {
+   "step": 20000,
+   "loss": 0.17053666710853577,
+   "acc": 0.8828125,
+   "shortcut_copy_last_set": 0.3203125,
+   "chance": 0.0625
+  },
+  {
+   "step": 22500,
+   "loss": 0.20411521196365356,
+   "acc": 0.953125,
+   "shortcut_copy_last_set": 0.3203125,
+   "chance": 0.0625
+  },
+  {
+   "step": 25000,
+   "loss": 0.08340966701507568,
+   "acc": 0.921875,
+   "shortcut_copy_last_set": 0.3203125,
+   "chance": 0.0625
+  },
+  {
+   "step": 27500,
+   "loss": 0.14880652725696564,
+   "acc": 0.9609375,
+   "shortcut_copy_last_set": 0.3203125,
+   "chance": 0.0625
+  },
+  {
+   "step": 30000,
+   "loss": 0.18734905123710632,
+   "acc": 0.9296875,
+   "shortcut_copy_last_set": 0.3203125,
+   "chance": 0.0625
+  }
+ ],
+ "minutes": 150.4,
+ "bf16": true,
+ "test": {
+  "512": {
+   "acc": 0.9619140625,
+   "shortcut_copy_last_set": 0.267578125,
+   "chance": 0.0625
+  },
+  "2048": {
+   "acc": 0.1162109375,
+   "shortcut_copy_last_set": 0.2509765625,
+   "chance": 0.0625
+  },
+  "8192": {
+   "acc": 0.056640625,
+   "shortcut_copy_last_set": 0.2490234375,
+   "chance": 0.0625
+  }
+ },
+ "config": {
+  "objects": 4,
+  "queries": 4,
+  "train_len": 512,
+  "test_lens": [
+   512,
+   2048,
+   8192
+  ],
+  "batch": 32,
+  "steps": 30000,
+  "eval_every": 2500,
+  "eval_samples": 256,
+  "max_hours": 5.0
+ },
+ "micro_batch": null,
+ "seconds": 9088.0
+}

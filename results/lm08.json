@@ -1,0 +1,50 @@
+{
+ "model": "hyb_gru_nope",
+ "repo": "(new) hybrid: GRU layer + x-transformers decoder",
+ "target_repo": "LM_Dec_Long_HybridGRU_NoPE",
+ "category": "Long",
+ "upstream": "lucidrains/x-transformers (MIT), pip 2.31.7 + torch.nn.GRU",
+ "unified": [
+  "1 GRU layer (dim 512) added residually before a 6-layer nope decoder (same decoder as xt_nope)"
+ ],
+ "torch": "2.5.1+cu124",
+ "gpu": "NVIDIA GeForce RTX 3070 Ti",
+ "stage": "lm08",
+ "started": "2026-11-09 18:42:56",
+ "smoke": false,
+ "steps": 6000,
+ "capped": false,
+ "bf16": true,
+ "final_bits": 3.28852532660229,
+ "test": {
+  "512": {
+   "bits_full": 3.245637024056389
+  },
+  "2048": {
+   "bits_full": 3.2332660970015135,
+   "bits_last512": 3.226855959638555,
+   "gain_from_history": -0.00641013736295859
+  },
+  "8192": {
+   "bits_full": 3.249212672354815,
+   "bits_last512": 3.2417976833585276,
+   "gain_from_history": -0.007414988996287342
+  }
+ },
+ "config": {
+  "train_len": 512,
+  "test_lens": [
+   512,
+   2048,
+   8192
+  ],
+  "batch": 16,
+  "steps": 6000,
+  "eval_every": 1000,
+  "eval_samples": 64,
+  "tail": 256,
+  "max_hours": 1.5
+ },
+ "minutes": 7.0,
+ "seconds": 421.6
+}
